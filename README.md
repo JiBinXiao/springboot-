@@ -19,5 +19,7 @@ springboot+dubbo+zk+mybatis+redis<br>
 maven上 SpringBoot+dubbo+zk项目初始化
 ***
 如何搭建环境参考文章<br>
-[zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409)
+[zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409)<br>
+[SpringBoot+Dubbo整合入门Demo](https://blog.csdn.net/weixin_33805152/article/details/87919394)
+
 
