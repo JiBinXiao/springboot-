@@ -1,4 +1,4 @@
-# 基于SpringBoot的一些通用框架集成，实现分布式web后端应用（
+# 基于SpringBoot的一些通用框架集成，实现分布式web后端应用
 springboot+dubbo+zk+mybatis+redis<br>
 实现用户管理功能
 ***
