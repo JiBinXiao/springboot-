@@ -1,5 +1,6 @@
-# 基于SpringBoot的一些通用框架集成，实现分布式web后端应用
+# 基于SpringBoot的一些通用框架集成，实现分布式web后端应用（
 springboot+dubbo+zk+mybatis+redis<br>
+实现用户管理功能
 ***
 ## 初步实现功能
 * 集成dubbo+zk分布式应用搭建
@@ -15,11 +16,14 @@ springboot+dubbo+zk+mybatis+redis<br>
 ***
 # 更新日志
 
-2019.02.25<br>
+* 2019.02.25<br>
 maven上 SpringBoot+dubbo+zk项目初始化
+* 2019.02.27<br>
+集成mybatis框架和mybatis-generator插件
 ***
 如何搭建环境参考文章<br>
-[zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409)<br>
-[SpringBoot+Dubbo整合入门Demo](https://blog.csdn.net/weixin_33805152/article/details/87919394)
+[一.zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409)<br>
+[二.SpringBoot+Dubbo整合入门Demo](https://blog.csdn.net/weixin_33805152/article/details/87919394)
+[三.SpringBoot+Mybatis集成入门Demo（Mybatis-Generator插件集成）](https://blog.csdn.net/weixin_33805152/article/details/87978315)
 
 
