@@ -1,5 +1,7 @@
 package com.xjb.data.provider.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -27,13 +29,11 @@ public class DataSource2Config {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.db2")
-    @Primary
     public DataSource db2DataSource(){
-        return DataSourceBuilder.create().build();
+        return   new DruidDataSource();
     }
 
     @Bean
-    @Primary
     public SqlSessionFactory db2SqlSessionFactory(@Qualifier("db2DataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
@@ -42,13 +42,11 @@ public class DataSource2Config {
     }
 
     @Bean
-    @Primary
     public DataSourceTransactionManager db2TransactionManager(@Qualifier("db2DataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
     @Bean
-    @Primary
     public SqlSessionTemplate db2SqlSessionTemplate(@Qualifier("db2SqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
