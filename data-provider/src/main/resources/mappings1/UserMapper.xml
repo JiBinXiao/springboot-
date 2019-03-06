@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xjb.data.provider.mapper.UserMapper" >
+<mapper namespace="com.xjb.data.provider.mapper.db1.UserMapper" >
   <resultMap id="BaseResultMap" type="com.xjb.data.api.model.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />

@@ -22,6 +22,9 @@ maven上 SpringBoot+dubbo+zk项目初始化
 集成mybatis框架和mybatis-generator插件
 * 2019.02.28<br>
 新增Lombok依赖
+* 2019.03.06<br>
+新增druid连接池
+新增数据库多数据源配置
 ***
 ## 如何搭建环境参考文章<br>
 [一.zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409?_blank)<br>

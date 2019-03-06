@@ -2,16 +2,13 @@ package com.xjb.data.provider.test.mapper;
 import java.util.Date;
 
 import com.xjb.data.api.model.User;
-import com.xjb.data.provider.mapper.UserMapper;
+import com.xjb.data.provider.mapper.db1.UserMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.annotation.Order;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.math.BigDecimal;
 
 /**
  * Created by xjb on 2019/2/27

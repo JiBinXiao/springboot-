@@ -4,7 +4,7 @@ package com.xjb.data.provider.service.imp;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.xjb.data.api.model.User;
 import com.xjb.data.api.service.UserService;
-import com.xjb.data.provider.mapper.UserMapper;
+import com.xjb.data.provider.mapper.db1.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
