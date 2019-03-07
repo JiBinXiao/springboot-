@@ -22,15 +22,15 @@ import javax.sql.DataSource;
  * Created by xjb on 2019/3/6
  **/
 @Configuration
-@MapperScan(basePackages = "com.xjb.data.provider.mapper.db2",sqlSessionTemplateRef = "db2SqlSessionTemplate")
+@MapperScan(basePackages = "com.xjb.data.provider.mapper.db2", sqlSessionTemplateRef = "db2SqlSessionTemplate")
 public class DataSource2Config {
     @Value("${mybatis.mapper-locations2}")
-    private String mapper_locations="";
+    private String mapper_locations = "";
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.db2")
-    public DataSource db2DataSource(){
-        return   new DruidDataSource();
+    public DataSource db2DataSource() {
+        return DruidDataSourceBuilder.create().build();
     }
 
     @Bean
