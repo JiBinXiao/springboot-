@@ -25,7 +25,6 @@ import javax.sql.DataSource;
 @Configuration
 //basePackages属性配置需要扫描的mybatis的mapper文件位置,sqlSessionFactory属性配置具体的 sqlSessionFactory.
 @MapperScan(basePackages = "com.xjb.data.provider.mapper.db1", sqlSessionTemplateRef = "db1SqlSessionTemplate")
-@Slf4j
 public class DataSource1Config {
 
     //mybatis 配置文件路径

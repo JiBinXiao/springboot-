@@ -25,11 +25,19 @@ maven上 SpringBoot+dubbo+zk项目初始化
 * 2019.03.06<br>
 新增druid连接池
 新增数据库多数据源配置
+* 2020.03.26<br>
+集成swagger2在线文档
+统一api返回格式RtnResult
+新增自定义消息转换器 将null->""
+添加防止XSS攻击功能
+使用aspect实现切面日志记录
 ***
 ## 如何搭建环境参考文章<br>
 [一.zookeeper安装-linux环境下](https://blog.csdn.net/weixin_33805152/article/details/87916409?_blank)<br>
 [二.SpringBoot+Dubbo整合入门Demo](https://blog.csdn.net/weixin_33805152/article/details/87919394?_blank)<br>
 [三.SpringBoot+Mybatis集成入门Demo（Mybatis-Generator插件集成）](https://blog.csdn.net/weixin_33805152/article/details/87978315?_blank)<br>
 [Lombok 介绍(转)](https://blog.csdn.net/weixin_33805152/article/details/88035898?_blank)<br>
+[Springboot框架自定义消息转换器](https://www.cnblogs.com/mrBeany/p/10649552.html)<br>
+[Springboot框架添加防止XSS攻击功能](https://www.cnblogs.com/mrBeany/p/10649853.html)<br>
 
 

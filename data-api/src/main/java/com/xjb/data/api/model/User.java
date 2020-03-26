@@ -1,22 +1,25 @@
 package com.xjb.data.api.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
 
-@ToString
+@ApiModel("任务-风险分类统计实体-请求传参")
 public class User implements Serializable {
+    @ApiModelProperty(value = "主键", required = false)
     private Integer id;
-
+    @ApiModelProperty(value = "用户名", required = false)
     private String username;
-
+    @ApiModelProperty(value = "密码", required = false)
     private String password;
-
+    @ApiModelProperty(value = "创建时间", required = false, readOnly = true, hidden = true)
     private Date ctime;
-
+    @ApiModelProperty(value = "修改时间", required = false, readOnly = true, hidden = true)
     private Date utime;
-
+    @ApiModelProperty(value = "状态", required = false, readOnly = true, hidden = true)
     private Integer st;
 
     public Integer getId() {

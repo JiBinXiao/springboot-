@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xjb.data.provider.mapper.db2.LoggerEntityMapper" >
-  <resultMap id="BaseResultMap" type="com.xjb.data.api.model.LoggerEntity" >
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="clientIp" property="clientip" jdbcType="VARCHAR" />
-    <result column="uri" property="uri" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
-    <result column="method" property="method" jdbcType="VARCHAR" />
-    <result column="classMethod" property="classmethod" jdbcType="VARCHAR" />
-    <result column="sessionId" property="sessionid" jdbcType="VARCHAR" />
-    <result column="createBy" property="createby" jdbcType="VARCHAR" />
-    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
-    <result column="returnTime" property="returntime" jdbcType="TIMESTAMP" />
-    <result column="timeConsuming" property="timeconsuming" jdbcType="INTEGER" />
-    <result column="httpStatusCode" property="httpstatuscode" jdbcType="VARCHAR" />
-    <result column="paramData" property="paramdata" jdbcType="LONGVARCHAR" />
-    <result column="exceptionMessage" property="exceptionmessage" jdbcType="LONGVARCHAR" />
-  </resultMap>
+<mapper namespace="com.xjb.data.provider.mapper.db2.LoggerEntityMapper">
+    <resultMap id="BaseResultMap" type="com.xjb.data.api.model.LoggerEntity">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="clientIp" property="clientip" jdbcType="VARCHAR"/>
+        <result column="uri" property="uri" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="method" property="method" jdbcType="VARCHAR"/>
+        <result column="classMethod" property="classmethod" jdbcType="VARCHAR"/>
+        <result column="sessionId" property="sessionid" jdbcType="VARCHAR"/>
+        <result column="createBy" property="createby" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createtime" jdbcType="TIMESTAMP"/>
+        <result column="returnTime" property="returntime" jdbcType="TIMESTAMP"/>
+        <result column="timeConsuming" property="timeconsuming" jdbcType="INTEGER"/>
+        <result column="httpStatusCode" property="httpstatuscode" jdbcType="VARCHAR"/>
+        <result column="paramData" property="paramdata" jdbcType="LONGVARCHAR"/>
+        <result column="exceptionMessage" property="exceptionmessage" jdbcType="LONGVARCHAR"/>
+    </resultMap>
 
-  <sql id="Base_Column_List" >
+    <sql id="Base_Column_List">
     id, clientIp, uri, type, method, classMethod, sessionId, createBy, createTime, returnTime, 
     timeConsuming, httpStatusCode
   </sql>
 
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    
-    from demo_log
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+
+        from demo_log
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from demo_log
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.xjb.data.api.model.LoggerEntity" >
+    <insert id="insert" parameterType="com.xjb.data.api.model.LoggerEntity">
     insert into demo_log (id, clientIp, uri, 
       type, method, classMethod, 
       sessionId, createBy, createTime, 
@@ -46,144 +46,144 @@
       #{returntime,jdbcType=TIMESTAMP}, #{timeconsuming,jdbcType=INTEGER}, #{httpstatuscode,jdbcType=VARCHAR}, 
       #{paramdata,jdbcType=LONGVARCHAR}, #{exceptionmessage,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.xjb.data.api.model.LoggerEntity" >
-    insert into demo_log
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="clientip != null" >
-        clientIp,
-      </if>
-      <if test="uri != null" >
-        uri,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="method != null" >
-        method,
-      </if>
-      <if test="classmethod != null" >
-        classMethod,
-      </if>
-      <if test="sessionid != null" >
-        sessionId,
-      </if>
-      <if test="createby != null" >
-        createBy,
-      </if>
-      <if test="createtime != null" >
-        createTime,
-      </if>
-      <if test="returntime != null" >
-        returnTime,
-      </if>
-      <if test="timeconsuming != null" >
-        timeConsuming,
-      </if>
-      <if test="httpstatuscode != null" >
-        httpStatusCode,
-      </if>
-      <if test="paramdata != null" >
-        paramData,
-      </if>
-      <if test="exceptionmessage != null" >
-        exceptionMessage,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
-      <if test="clientip != null" >
-        #{clientip,jdbcType=VARCHAR},
-      </if>
-      <if test="uri != null" >
-        #{uri,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="method != null" >
-        #{method,jdbcType=VARCHAR},
-      </if>
-      <if test="classmethod != null" >
-        #{classmethod,jdbcType=VARCHAR},
-      </if>
-      <if test="sessionid != null" >
-        #{sessionid,jdbcType=VARCHAR},
-      </if>
-      <if test="createby != null" >
-        #{createby,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="returntime != null" >
-        #{returntime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="timeconsuming != null" >
-        #{timeconsuming,jdbcType=INTEGER},
-      </if>
-      <if test="httpstatuscode != null" >
-        #{httpstatuscode,jdbcType=VARCHAR},
-      </if>
-      <if test="paramdata != null" >
-        #{paramdata,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="exceptionmessage != null" >
-        #{exceptionmessage,jdbcType=LONGVARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xjb.data.api.model.LoggerEntity" >
-    update demo_log
-    <set >
-      <if test="clientip != null" >
-        clientIp = #{clientip,jdbcType=VARCHAR},
-      </if>
-      <if test="uri != null" >
-        uri = #{uri,jdbcType=VARCHAR},
-      </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
-      </if>
-      <if test="method != null" >
-        method = #{method,jdbcType=VARCHAR},
-      </if>
-      <if test="classmethod != null" >
-        classMethod = #{classmethod,jdbcType=VARCHAR},
-      </if>
-      <if test="sessionid != null" >
-        sessionId = #{sessionid,jdbcType=VARCHAR},
-      </if>
-      <if test="createby != null" >
-        createBy = #{createby,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="returntime != null" >
-        returnTime = #{returntime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="timeconsuming != null" >
-        timeConsuming = #{timeconsuming,jdbcType=INTEGER},
-      </if>
-      <if test="httpstatuscode != null" >
-        httpStatusCode = #{httpstatuscode,jdbcType=VARCHAR},
-      </if>
-      <if test="paramdata != null" >
-        paramData = #{paramdata,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="exceptionmessage != null" >
-        exceptionMessage = #{exceptionmessage,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
+    <insert id="insertSelective" parameterType="com.xjb.data.api.model.LoggerEntity">
+        insert into demo_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="clientip != null">
+                clientIp,
+            </if>
+            <if test="uri != null">
+                uri,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="method != null">
+                method,
+            </if>
+            <if test="classmethod != null">
+                classMethod,
+            </if>
+            <if test="sessionid != null">
+                sessionId,
+            </if>
+            <if test="createby != null">
+                createBy,
+            </if>
+            <if test="createtime != null">
+                createTime,
+            </if>
+            <if test="returntime != null">
+                returnTime,
+            </if>
+            <if test="timeconsuming != null">
+                timeConsuming,
+            </if>
+            <if test="httpstatuscode != null">
+                httpStatusCode,
+            </if>
+            <if test="paramdata != null">
+                paramData,
+            </if>
+            <if test="exceptionmessage != null">
+                exceptionMessage,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="clientip != null">
+                #{clientip,jdbcType=VARCHAR},
+            </if>
+            <if test="uri != null">
+                #{uri,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="classmethod != null">
+                #{classmethod,jdbcType=VARCHAR},
+            </if>
+            <if test="sessionid != null">
+                #{sessionid,jdbcType=VARCHAR},
+            </if>
+            <if test="createby != null">
+                #{createby,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="returntime != null">
+                #{returntime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="timeconsuming != null">
+                #{timeconsuming,jdbcType=INTEGER},
+            </if>
+            <if test="httpstatuscode != null">
+                #{httpstatuscode,jdbcType=VARCHAR},
+            </if>
+            <if test="paramdata != null">
+                #{paramdata,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="exceptionmessage != null">
+                #{exceptionmessage,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.xjb.data.api.model.LoggerEntity">
+        update demo_log
+        <set>
+            <if test="clientip != null">
+                clientIp = #{clientip,jdbcType=VARCHAR},
+            </if>
+            <if test="uri != null">
+                uri = #{uri,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="method != null">
+                method = #{method,jdbcType=VARCHAR},
+            </if>
+            <if test="classmethod != null">
+                classMethod = #{classmethod,jdbcType=VARCHAR},
+            </if>
+            <if test="sessionid != null">
+                sessionId = #{sessionid,jdbcType=VARCHAR},
+            </if>
+            <if test="createby != null">
+                createBy = #{createby,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                createTime = #{createtime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="returntime != null">
+                returnTime = #{returntime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="timeconsuming != null">
+                timeConsuming = #{timeconsuming,jdbcType=INTEGER},
+            </if>
+            <if test="httpstatuscode != null">
+                httpStatusCode = #{httpstatuscode,jdbcType=VARCHAR},
+            </if>
+            <if test="paramdata != null">
+                paramData = #{paramdata,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="exceptionmessage != null">
+                exceptionMessage = #{exceptionmessage,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
 
-  <update id="updateByPrimaryKey" parameterType="com.xjb.data.api.model.LoggerEntity" >
+    <update id="updateByPrimaryKey" parameterType="com.xjb.data.api.model.LoggerEntity">
     update demo_log
     set clientIp = #{clientip,jdbcType=VARCHAR},
       uri = #{uri,jdbcType=VARCHAR},
