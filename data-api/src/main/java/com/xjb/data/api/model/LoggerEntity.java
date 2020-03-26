@@ -6,9 +6,10 @@ package com.xjb.data.api.model;
  */
 
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LoggerEntity {
+public class LoggerEntity implements Serializable {
     //编号
     private Long id;
     //客户端请求ip

@@ -1,5 +1,6 @@
 package com.xjb.data.consumer.aspect;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.xjb.data.api.model.LoggerEntity;
@@ -9,7 +10,6 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -29,7 +29,7 @@ public class WebLogAspect {
     private final static Logger logger = LoggerFactory.getLogger(WebLogAspect.class);
 
 
-    @Autowired
+    @Reference(version = "1.0.0")
     LoggerService loggerService;
 
 
@@ -68,7 +68,7 @@ public class WebLogAspect {
      * ~ 第五个 * 任意方法
      * ~ .. 匹配任意数量的参数.
      */
-    @Pointcut("execution(public * com.trs.dcurulemark.controller..*.*(..))")
+    @Pointcut("execution(public * com.xjb.data.consumer.controller..*.*(..))")
     public void webLog() {
     }
 

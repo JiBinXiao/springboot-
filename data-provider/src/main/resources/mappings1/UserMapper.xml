@@ -30,7 +30,7 @@
       #{ctime,jdbcType=TIMESTAMP}, #{utime,jdbcType=TIMESTAMP}, #{st,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.xjb.data.api.model.User" >
+  <insert id="insertSelective" parameterType="com.xjb.data.api.model.User" useGeneratedKeys="true" keyProperty="id">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
